@@ -1,70 +1,52 @@
-#   importing the time module
-import time
+import random
 
-#   greeting
-name = input("What is your name? \n")
-print ("Hello, " + name, "it's time to play hangman!")
+def generate_random_word():
+    """Generates a random English word from a list."""
 
-#   wait for 2 second
-time.sleep(2)
+    words = ["apple", "banana", "cherry", "dragonfruit", "elderberry",  # Add more words here!
+             "fig", "grape", "honeydew", "jackfruit", "kiwi"]
 
-print("Hint: It's Mrs. Smith's favorite rhetorical device!")
-print ("Start guessing...")
-time.sleep(1)
+    random_index = random.randint(0, len(words) - 1)
+    random_word = words[random_index]
+    tries = len(random_word)
 
-#   this will be the word you need to find
-word = ("zeugma")
+    return random_word, tries
 
-#   makes the things you guess
-guesses = ''
+def play_word_guessing_game():
+    """Plays a word guessing game with the generated word."""
 
-#   number of terms you have
-turns = 6
+    random_word, tries = generate_random_word()
+    guessed_letters = set()  # Keep track of guessed letters
+    guessed_word = ["_"] * len(random_word)  # Initialize with underscores
 
-#   Create a while loop for the game
-while turns > 0:         
+    while tries > 0:
+        print("The word:", " ".join(guessed_word))  # Display current guessed word
+        guess = input("Guess a letter: ").lower()  # Convert input to lowercase for consistency
 
-    #   counter
-    failed = 0             
+        if len(guess) != 1 or not guess.isalpha():
+            print("Invalid input. Please enter a single letter.")
+            continue
 
-    #   goes through word to check 
-    for char in word:      
+        if guess in guessed_letters:
+            print("You have already guessed that letter. Try again.")
+            continue
 
-    #   checks if any words you guess are correct
-        if char in guesses:    
-    
-        #   prints what you guess
-            print (char,end=""),    
+        guessed_letters.add(guess)  # Add the guessed letter to the set
 
+        if guess in random_word:
+            for i in range(len(random_word)):
+                if random_word[i] == guess:
+                    guessed_word[i] = guess
         else:
-        #   appears if you are wrong
-            print (" _ ",end=""),     
-       
-        #   increases fails
-            failed += 1    
+            tries -= 1
+            print("Incorrect guess. You have", tries, "tries remaining.")
 
+        if "_" not in guessed_word:
+            print("Congratulations! You guessed the word:", random_word)
+            break
 
-    #   if fail is equal to 0
-    if failed == 0:        
-        print (" You won")
-   
-        break  
+    if tries == 0:
+        print("You ran out of tries. The word was:", random_word)
 
-    #   ask again
-    guess = input(", guess a letter: ") 
-
-    #   sets your guess to the guesses taken and function for if not
-    guesses += guess                    
-    if guess not in word:  
- 
-     #  removes a turn if wrong
-        turns -= 1        
-        print ("Wrong")  
- 
-    #   tells you how many turns you have left
-        print ("You have", + turns, 'more guesses' )
- 
-    #   condional for if you lose
-        if turns == 0:           
-            print ("You Lose, the word was " + word )
-    
+# Start the game
+play_word_guessing_game()
