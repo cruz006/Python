@@ -1,7 +1,6 @@
 # Info on this all i guess
 
 So this is just a folder with all of my python projects, little things, and everything Python related that I may use.
-This will also be used for mesa day prep 2024 for coding solutions: [Mesa 2024 Coding Solutions Project](https://mesa.ucop.edu/wp-content/uploads/2023/09/2023-24-HS_Coding-Solutions-Online-DRAFT.pdf)
 
 - This will basically be everything Python i will use, do, or have.
 
