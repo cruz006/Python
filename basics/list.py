@@ -39,5 +39,8 @@ print("\n")
 names = []
 names = ["Rayden" , "John", "Ev"]
 second_name = names[1]
-print("The second name on the names list is %s" % second_name)
-print("\n")
+print("The second name on the names list is %s" % second_name + "\n")
+
+#       next is the len command, to find the length of certain things
+var1 = "How long do you think this sentence is?"
+print(var1 + "\nWell, it is actually " + str(len(var1)) + " characters long\n")

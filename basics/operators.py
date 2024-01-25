@@ -149,8 +149,13 @@ def run_function(func_name):
        repeat()
    else:
         print("Invalid function name")
+
+def round_function():
+    #   this first part is the number you choose to round
+    #   the second part is the place you want to round it to
+    round(3.1415926535, 5)
         
-var1 = input("Which function would you like to run today? Your options are: basics, average, division, multiplication, cubed, lists, square, repeat" + "\n")
+var1 = input("Which function would you like to run today? Your options are: basics, average, division, multiplication, cubed, lists, square, repeat, round" + "\n")
 run_function(var1)
 
 #   another way to do this

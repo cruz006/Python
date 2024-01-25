@@ -3,11 +3,11 @@
 import statistics
 
 def greeting():
-    name = input("hello, what is your name?" + "\n")
-    print("Hello there " + name + " how are you?")
+    name = input("hello, what is your name?\n")
+    print("Hello there " + name + " how are you?\n")
 
 def avg():
-    numbers = input("put a list of numbers here:" + "\n")
+    numbers = input("put a list of numbers here:\n")
     sums = sum(numbers)
     result = (sums)/(numbers)
     print (result)

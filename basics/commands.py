@@ -42,7 +42,7 @@ print("\n")
 #   this is the input command, where it takes your input
 #   then, it prints your input
 var3 = input("Hello, your name is: \n")
-print("Hello there " + var3) 
+print("Hello there " + var3 + "\n") 
 
 var4 = input("Pick any number: \n")
 print("The number you said is " + var4 + ", correct?\n")
