@@ -66,7 +66,17 @@ print(str2.find(str3))
 str1 = "I got you a cookie, do you like cookies?"
 str2 = "cookie"
 print(str1.count(str2))
+print("the numbers aboce are where in str2 the word cookie was found, at character 12, and then it is how many times the word 'cookie' was in str1\n")
 
 #   this i show you find the legnth of a string
 var6 = "Hello my name is Johnny"
 print('''The lenth of "Hello my name is Johnny is" ''' + str(len(var6)) + "\n")
+
+#   this is isalnum(), checks whether all the characters
+#   of a given string are alphanumeric or not. It returns a boolean value
+#   if you put spaces it will come out false, it should be something like this: qwertyuiop
+str4 = "why hellot here"
+print(str4.isalnum())
+#   str4 did not come out true due to the spaces
+str5 = "ThisOneWillComeOutTrue"
+print(str5.isalnum())
