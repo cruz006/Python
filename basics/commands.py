@@ -21,7 +21,6 @@ for i in range(1,10):
     print(i)
     print("\n")
 
-
 #   this is a type command, which is used to check 
 #   the type of an object in your code. 
 #   when you print it, it will show you which class the object is
